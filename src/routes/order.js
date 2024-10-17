@@ -1,6 +1,6 @@
 import express from 'express';
 import { addOrder,getOrders,getSingleOrder,getUsers,
-    getWorkers,updateOrderStatus,getDashboardDetails,updateUserStatus} from '../controllers/Customers&Workers';
+    getWorkers,addCustomer,updateOrderStatus,getDashboardDetails,updateUserStatus} from '../controllers/Customers&Workers';
 
 const router = express.Router();
 
@@ -12,6 +12,7 @@ router.get("/get-users", getUsers);
 router.post("/update-user-status/:id", updateUserStatus);
 router.post("/get-dashboard-details", getDashboardDetails);
 router.get("/get-workers", getWorkers);
+router.post("/add-customer", addCustomer);
 
 
 export default router;

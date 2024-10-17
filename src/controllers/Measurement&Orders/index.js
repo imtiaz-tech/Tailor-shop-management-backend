@@ -9,7 +9,6 @@ import updateCustomerInfo from "./update-customer-info";
 import getCustomers from "./get-customers";
 import addMeasurement from "./add-measurement";
 import getMeasurements from "./get-measurements";
-import addCustomer from "./add-customer";
 export {
   getCustomers,
   getSingleCustomer,
@@ -22,5 +21,4 @@ export {
   updateCustomerInfo,
   addMeasurement,
   getMeasurements,
-  addCustomer,
 };

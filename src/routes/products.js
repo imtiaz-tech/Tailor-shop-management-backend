@@ -1,7 +1,6 @@
 import express from "express";
 
 import {
-  getCustomers,
   getOrders,
   getSingleCustomer,
   updateSingleCategory,
@@ -16,7 +15,6 @@ import {
 
 const router = express.Router();
 
-router.get("/get-customers", getCustomers);
 router.get("/get-single-customer/:id?", getSingleCustomer);
 router.patch("/update-single-category/:id", updateSingleCategory);
 router.delete("/delete-single-category/:id", deleteSingleCategory);

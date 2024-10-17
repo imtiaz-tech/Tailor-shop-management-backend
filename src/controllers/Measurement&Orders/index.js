@@ -6,11 +6,9 @@ import getOrders from "./get-orders";
 import deleteSingleProduct from "./delete-single-product";
 import getSingleProduct from "./get-single-product";
 import updateCustomerInfo from "./update-customer-info";
-import getCustomers from "./get-customers";
 import addMeasurement from "./add-measurement";
 import getMeasurements from "./get-measurements";
 export {
-  getCustomers,
   getSingleCustomer,
   updateSingleCategory,
   deleteSingleCategory,

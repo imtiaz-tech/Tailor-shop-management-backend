@@ -2,7 +2,7 @@ import express from "express";
 
 import {
   addCustomer,
-  getWorkers,
+  // getWorkers,
   getCustomers,
   getOrders,
   getSingleCustomer,
@@ -19,7 +19,7 @@ import {
 const router = express.Router();
 
 router.post("/add-customer", addCustomer);
-router.get("/get-workers", getWorkers);
+// router.get("/get-workers", getWorkers);
 router.get("/get-customers", getCustomers);
 router.get("/get-single-customer/:id?", getSingleCustomer);
 router.patch("/update-single-category/:id", updateSingleCategory);

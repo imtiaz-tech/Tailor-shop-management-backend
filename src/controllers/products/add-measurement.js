@@ -4,12 +4,24 @@ import Measurement from "../../models/measurement";
 //this api used in ProductAdd component Dashboard project
 const addMeasurement = async (req, res) => {
   try {
-    const { measurement, measurementType, id } = req.body;
-    const data = await Measurement.create({
-      measurement,
-      measurementType,
-      customerId: id,
-    });
+    const { customerId, measurement, measurementType } = req.body;
+    let data = await Measurement.findOne({ customerId, measurementType });
+    if (data) {
+      data = await Measurement.updateOne(
+        { customerId, measurementType },
+        {
+          measurement,
+          measurementType,
+          customerId,
+        }
+      );
+    } else {
+      data = await Measurement.create({
+        measurement,
+        measurementType,
+        customerId,
+      });
+    }
     return res.status(200).json({
       data,
       success: true,

@@ -1,13 +1,11 @@
 import Customer from "../../models/customer";
-//addCategory api used for add Product to database it gets 8 parameters from frontend {name,status,textEditor,price,sku,quantity,category,image} in req.body
-//this api response is save Product in database in product Table
-//this api used in ProductAdd component Dashboard project
+//addCategory api used for add category to database it gets two parameters from frontend name,status in req.body  
+//this api response is save category in database
+//this api used in CategoriesAdd component Dashboard project
 const addCustomer = async (req, res) => {
   try {
     const { name, phoneNo,address } = req.body;
-    const data = await Customer.create({
-      name, phoneNo,address  
-    });
+    const data = await Customer.create({ name, phoneNo,address });
     return res.status(200).json({
       data,
       success: true,

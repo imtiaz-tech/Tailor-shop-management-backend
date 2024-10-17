@@ -6,7 +6,6 @@ const updateOrderStatus = async (req, res) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
-    console.log("🚀 ~ updateOrderStatus ~ status:", status)
     const data = await Order.updateOne(
       { _id: id },
       {

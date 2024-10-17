@@ -6,11 +6,11 @@ import addOrders from "./add-order";
 import getOrders from "./get-orders";
 import deleteSingleProduct from "./delete-single-product";
 import getSingleProduct from "./get-single-product";
-import updateUserInfo from "./update-user-info";
+import updateCustomerInfo from "./update-customer-info";
 import getCustomers from "./get-customers";
 import addMeasurement from "./add-measurement";
 import getMeasurements from "./get-measurements";
-import addCustomer from "./add-category";
+import addCustomer from "./add-customer";
 export {
   getWorkers,
   getCustomers,
@@ -21,7 +21,7 @@ export {
   getOrders,
   deleteSingleProduct,
   getSingleProduct,
-  updateUserInfo,
+  updateCustomerInfo,
   addMeasurement,
   getMeasurements,
   addCustomer,

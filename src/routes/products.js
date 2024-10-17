@@ -2,7 +2,6 @@ import express from "express";
 
 import {
   addCustomer,
-  // getWorkers,
   getCustomers,
   getOrders,
   getSingleCustomer,
@@ -14,12 +13,11 @@ import {
   updateCustomerInfo,
   addMeasurement,
   getMeasurements,
-} from "../controllers/products";
+} from "../controllers/Measurement&Orders";
 
 const router = express.Router();
 
 router.post("/add-customer", addCustomer);
-// router.get("/get-workers", getWorkers);
 router.get("/get-customers", getCustomers);
 router.get("/get-single-customer/:id?", getSingleCustomer);
 router.patch("/update-single-category/:id", updateSingleCategory);

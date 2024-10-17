@@ -8,6 +8,7 @@ import getDashboardDetails from "./get-dashboard-details";
 import getWorkers from "./get-workers";
 import addCustomer from "./add-customer";
 import getCustomers from "./get-customers";
-export { addOrder, getOrders, getSingleOrder, addCustomer,getCustomers,
+import updateCustomerInfo from "./update-customer-info";
+export { addOrder, getOrders, getSingleOrder, addCustomer,getCustomers,updateCustomerInfo,
     updateOrderStatus, getUsers, updateUserStatus,getDashboardDetails,getWorkers
  };

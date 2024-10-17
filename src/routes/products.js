@@ -8,7 +8,6 @@ import {
   addOrders,
   deleteSingleProduct,
   getSingleProduct,
-  updateCustomerInfo,
   addMeasurement,
   getMeasurements,
 } from "../controllers/Measurement&Orders";
@@ -24,6 +23,5 @@ router.post("/get-measurements", getMeasurements);
 router.get("/get-orders", getOrders);
 router.delete("/delete-single-product/:id", deleteSingleProduct);
 router.get("/get-single-product/:id", getSingleProduct);
-router.patch("/update-Customer-info/:id", updateCustomerInfo);
 
 export default router;

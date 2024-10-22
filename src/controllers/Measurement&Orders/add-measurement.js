@@ -7,7 +7,7 @@ const addMeasurement = async (req, res) => {
     const { customerId, measurement, measurementType } = req.body;
     let data = await Measurement.findOne({ customerId, measurementType });
     if (data) {
-      data = await Measurement.updateOne(
+      await Measurement.updateOne(
         { customerId, measurementType },
         {
           measurement,
@@ -15,6 +15,7 @@ const addMeasurement = async (req, res) => {
           customerId,
         }
       );
+      data = await Measurement.findOne({ customerId, measurementType });
     } else {
       data = await Measurement.create({
         measurement,

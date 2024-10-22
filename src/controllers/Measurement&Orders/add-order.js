@@ -4,16 +4,17 @@ import Order from "../../models/order";
 //this api used in ProductAdd component Dashboard project
 const addOrders = async (req, res) => {
   try {
-    const { otherPhoneNo, price, deliveryDate, additionalCharges, worker, image,id,measurementId } = req.body;
+    const { otherPhoneNo, price, deliveryDate, extraCharges, worker, images,id,measurementId,measurementtype } = req.body;
     const data = await Order.create({
       otherPhoneNo,
       deliveryDate,
-      additionalCharges,
+      extraCharges,
       price,
       customerId: id,
       userId: worker,
       measurementId:measurementId,
-      image,
+      images,
+      measurementtype,
     });
     return res.status(200).json({
       data,

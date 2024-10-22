@@ -6,13 +6,23 @@ const schema = new Schema(
     measurementId: { type: mongoose.Schema.Types.ObjectId, ref: "measurement" },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     deliveryDate: String,
-    image: String,
-    additionalCharges: Number,
+    images:[{
+      type:String
+    }],
+    measurementtype:[{
+      type:String
+    }],
+    extraCharges: [
+      {
+        name: String,
+        price: Number,
+      },
+    ],
     name: String,
     price: Number,
-    phoneNo:Number,
+    phoneNo: Number,
     address: String,
-    otherPhoneNo:Number,
+    otherPhoneNo: Number,
     status: {
       type: String,
       default: "Pending",

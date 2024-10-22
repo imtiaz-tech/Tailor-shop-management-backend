@@ -4,7 +4,7 @@ import Measurement from "../../models/measurement";
 //this api used in ProductAdd component Dashboard project
 const getMeasurements = async (req, res) => {
   try {
-    const { measurementTypes, customerId } = req.body;
+    const { measurementTypes, customerId,  } = req.body;
     const data = await Measurement.find({ customerId, measurementType: { $in: measurementTypes } });
     return res.status(200).json({
       data,
@@ -12,6 +12,7 @@ const getMeasurements = async (req, res) => {
       message: "Measurements Get Succesfully",
     });
   } catch (error) {
+    console.log("🚀 ~ getMeasurements ~ error:", error)
     return res.status(500).json({ success: false, message: error.message });
   }
 };

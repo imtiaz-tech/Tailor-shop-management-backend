@@ -3,26 +3,26 @@ import mongoose, { Schema } from "mongoose";
 const schema = new Schema(
   {
     customerId: { type: mongoose.Schema.Types.ObjectId, ref: "customer" },
-    measurementId: { type: mongoose.Schema.Types.ObjectId, ref: "measurement" },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
-    deliveryDate: String,
-    images:[{
-      type:String
-    }],
-    measurementtype:[{
-      type:String
-    }],
+    workerId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+    orderNumber: {
+      type: Number,
+      default: () => new Date().getTime(),
+    }, // timestamp
+    price: Number,
+    otherPhoneNo: String,
+    deliveryDate: Date,
     extraCharges: [
       {
         name: String,
         price: Number,
       },
     ],
-    name: String,
-    price: Number,
-    phoneNo: Number,
-    address: String,
-    otherPhoneNo: Number,
+    orderItems: [
+      {
+        measurementId: { type: mongoose.Schema.Types.ObjectId, ref: "measurement" },
+        imageUrl: String,
+      },
+    ],
     status: {
       type: String,
       default: "Pending",

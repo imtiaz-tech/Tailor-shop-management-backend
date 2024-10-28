@@ -9,6 +9,18 @@ import getWorkers from "./get-workers";
 import addCustomer from "./add-customer";
 import getCustomers from "./get-customers";
 import updateCustomerInfo from "./update-customer-info";
-export { addOrder, getOrders, getSingleOrder, addCustomer,getCustomers,updateCustomerInfo,
-    updateOrderStatus, getUsers, updateUserStatus,getDashboardDetails,getWorkers
- };
+import getPreAsignedUrl from "./get-pre-asigned-url";
+export {
+  addOrder,
+  getOrders,
+  getSingleOrder,
+  addCustomer,
+  getCustomers,
+  updateCustomerInfo,
+  updateOrderStatus,
+  getUsers,
+  updateUserStatus,
+  getDashboardDetails,
+  getWorkers,
+  getPreAsignedUrl,
+};

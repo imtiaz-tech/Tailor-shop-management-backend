@@ -1,3 +1,4 @@
+import Measurement from "../../models/measurement";
 import Order from "../../models/order";
 //getSingleOrder api used for get single order by id from database it gets 1 parameters from frontend {id} req.params
 //this api response is return get single order by id from database
@@ -8,8 +9,9 @@ const getSingleOrder = async (req, res) => {
   try {
     const { id } = req.params;
     const data = await Order.findOne({ _id: id })
-    .populate("cart.productId")
-    .populate("userId");
+      .populate("customerId")
+      .populate("workerId")
+      .populate("orderItems.measurementId");
     return res.status(200).json({
       data,
       success: true,

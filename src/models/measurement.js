@@ -5,7 +5,7 @@ const schema = new Schema(
     customerId: { type: mongoose.Schema.Types.ObjectId, ref: "customer", required: true },
     measurementType: {
       type: String,
-      enum: ["shirt", "pent", "coat", "waistcoat", "shairwani", "kurta", "pajama", "sot", "shalwar", "pentcoat"],
+      enum: ["shirt", "pent", "coat", "waistcoat", "shairwani", "kurta", "trouser", "qameez", "shalwar", "pentcoat"],
       required: true,
     },
     measurement: {
@@ -38,6 +38,7 @@ const schema = new Schema(
       circlegaheera: Number,
       squaregaheera: Number,
       alti: Number,
+      gaheera: Number,
     },
   },
   { timestamps: true }

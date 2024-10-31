@@ -13,8 +13,8 @@ const updateOrderStatus = async (req, res) => {
       }
     );
     return res.status(200).json({
-        data,
-        message: "Update Order Status Succesfully",
+      data,
+      message: "Update Order Status Succesfully",
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });

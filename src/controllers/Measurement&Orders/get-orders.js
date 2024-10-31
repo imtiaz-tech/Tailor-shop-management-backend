@@ -16,7 +16,6 @@ const getOrders = async (req, res) => {
       .skip((pageno - 1) * perpage)
       .limit(perpage);
     const count = await Order.count();
-
     return res.status(200).json({
       data,
       count,

@@ -10,6 +10,7 @@ import addCustomer from "./add-customer";
 import getCustomers from "./get-customers";
 import updateCustomerInfo from "./update-customer-info";
 import getPreAsignedUrl from "./get-pre-asigned-url";
+import changeWorker from "./change-worker";
 export {
   addOrder,
   getOrders,
@@ -23,4 +24,5 @@ export {
   getDashboardDetails,
   getWorkers,
   getPreAsignedUrl,
+  changeWorker,
 };

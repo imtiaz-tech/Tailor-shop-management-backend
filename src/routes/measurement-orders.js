@@ -4,7 +4,7 @@ import {
   getOrders,
   getSingleCustomer,
   getSingleWorker,
-  updateSingleCategory,
+  updateSingleCustomer,
   deleteSingleCategory,
   addOrders,
   deleteSingleProduct,
@@ -22,7 +22,7 @@ router.get("/get-single-worker/:id?", getSingleWorker);
 router.get("/get-orders-by-search/:id?", getOrdersBySearch);
 router.get("/get-single-customer-for-edit/:id?", getSingleCustomerForEdit);
 
-router.patch("/update-single-category/:id", updateSingleCategory);
+router.patch("/update-single-category/:id", updateSingleCustomer);
 router.delete("/delete-single-category/:id", deleteSingleCategory);
 router.post("/add-order", addOrders);
 router.post("/add-measurement", addMeasurement);

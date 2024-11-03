@@ -1,16 +1,15 @@
-// import Category from "../../models/category";
-//updateSingleCategory api used for add update category to database it gets 3 parameters from frontend name,status in req.body and id req.params
-//this api response is save updated category in database
-//this api used in CategoriesEdit component Dashboard project
-const updateSingleCategory = async (req, res) => {
+import Customer from "../../models/customer";
+
+const updateSingleCustomer = async (req, res) => {
   try {
     const { id } = req.params;
-    const { name, status } = req.body;
-    const data = await Category.updateOne(
+    const { name, phoneNo, address } = req.body;
+    const data = await Customer.updateOne(
       { _id: id },
       {
         name,
-        status,
+        phoneNo,
+        address,
       }
     );
     return res.status(200).json({
@@ -21,4 +20,4 @@ const updateSingleCategory = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
-export default updateSingleCategory;
+export default updateSingleCustomer;

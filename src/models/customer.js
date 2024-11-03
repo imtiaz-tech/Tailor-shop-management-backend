@@ -4,10 +4,10 @@ const schema = new Schema(
   {
     name: String,
     phoneNo: {
-      type:Number,
+      type: String,
       index: true,
       unique: true,
-    } ,
+    },
     address: String,
   },
   { timestamps: true }

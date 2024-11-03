@@ -1,12 +1,9 @@
 import Customer from "../../models/customer";
 
-const getSingleCustomer = async (req, res) => {
+const getSingleCustomerForEdit = async (req, res) => {
   try {
-    const { search } = req.query;
-
-    const data = await Customer.findOne({
-      phoneNo: search,
-    });
+    const { id } = req.params;
+    const data = await Customer.findById(id);
     return res.status(200).json({
       data,
       success: true,
@@ -17,4 +14,4 @@ const getSingleCustomer = async (req, res) => {
   }
 };
 
-export default getSingleCustomer;
+export default getSingleCustomerForEdit;

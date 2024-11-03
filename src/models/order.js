@@ -25,12 +25,9 @@ const schema = new Schema(
     ],
     status: {
       type: String,
-      enum: ["pending", "progress", "completed"],
+      enum: ["Pending", "Progress", "Completed"],
+      default: "Pending",
     },
-    // status: {
-    //   type: String,
-    //   default: "Pending",
-    // },
   },
   { timestamps: true }
 );

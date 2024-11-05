@@ -1,6 +1,6 @@
 import getSingleCustomer from "./get-single-customer";
-import updateSingleCustomer from "./update-single-category";
-import deleteSingleCategory from "./delete-single-category";
+import updateSingleCustomer from "./update-single-customer";
+import deleteSingleCustomer from "./delete-single-customer";
 import addOrders from "./add-order";
 import getOrders from "./get-orders";
 import deleteSingleProduct from "./delete-single-product";
@@ -16,7 +16,7 @@ export {
   getOrdersBySearch,
   getSingleCustomerForEdit,
   updateSingleCustomer,
-  deleteSingleCategory,
+  deleteSingleCustomer,
   addOrders,
   getOrders,
   deleteSingleProduct,

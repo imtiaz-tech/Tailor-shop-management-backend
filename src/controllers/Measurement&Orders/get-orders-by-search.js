@@ -3,9 +3,11 @@ import Order from "../../models/order";
 const getOrdersBySearch = async (req, res) => {
   try {
     const { search } = req.query;
+    console.log("🚀 ~ getOrdersBySearch ~ search:", search);
     const data = await Order.find({
       orderNumber: search,
     });
+    console.log("🚀 ~ getOrdersBySearch ~ data:", data);
     return res.status(200).json({
       data,
       success: true,

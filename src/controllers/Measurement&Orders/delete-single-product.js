@@ -1,7 +1,5 @@
 // import Product from "../../models/product";
-//deleteSingleProduct api used for delete product from database it gets 1 parameters from frontend {id} in req.params  
-//this api response is delete category from database
-//this api used in CardBlock component Dashboard project
+
 const deleteSingleProduct = async (req, res) => {
   try {
     const { id } = req.params;

@@ -1,9 +1,4 @@
 // import Users from "../../models/users";
-//getUsers api used for get User from database it gets 2 parameters from frontend { currentPage,recordsPerPage } in req.query
-//this api response is return Users from database and Users count
-//this api used in CustomerList component for show users  Dashboard project
-//.skip used for frontend pagination how many categories skip for next or previous page
-//.limit used for how many categories shows on single page
 
 const getUsers = async (req, res) => {
   try {

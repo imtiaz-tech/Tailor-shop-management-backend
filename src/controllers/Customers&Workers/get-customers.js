@@ -2,14 +2,23 @@ import Customer from "../../models/customer";
 
 const getCustomers = async (req, res) => {
   try {
-    let { pageno, perpage } = req.query;
+    let { pageno, perpage, searchCustomer } = req.query;
     pageno = parseInt(pageno) || 1;
     perpage = parseInt(perpage) || 10;
+    let filter = {};
+    if (searchCustomer) {
+      filter = {
+        $or: [
+          { phoneNo: { $regex: searchCustomer, $options: "i" } },
+          { name: { $regex: searchCustomer, $options: "i" } },
+        ],
+      };
+    }
     let data = [];
-    data = await Customer.find()
+    data = await Customer.find(filter)
       .skip((pageno - 1) * perpage)
       .limit(perpage);
-    const count = await Customer.count();
+    const count = await Customer.count(filter);
     return res.status(200).json({
       data,
       count,

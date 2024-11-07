@@ -1,7 +1,5 @@
 import Measurement from "../../models/measurement";
-//addCategory api used for add Product to database it gets 8 parameters from frontend {name,status,textEditor,price,sku,quantity,category,image} in req.body
-//this api response is save Product in database in product Table
-//this api used in ProductAdd component Dashboard project
+
 const addMeasurement = async (req, res) => {
   try {
     const { customerId, measurement, measurementType } = req.body;

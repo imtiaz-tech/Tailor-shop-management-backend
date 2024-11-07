@@ -1,10 +1,6 @@
 import Measurement from "../../models/measurement";
 import Order from "../../models/order";
-//getSingleOrder api used for get single order by id from database it gets 1 parameters from frontend {id} req.params
-//this api response is return get single order by id from database
-//this api used in OrderDetail component for show Single order detail Dashboard project
-//.populate used for populate with cart and userId
-// populate reference fields in a document of a certain collection with documents from another collection
+
 const getSingleOrder = async (req, res) => {
   try {
     const { id } = req.params;

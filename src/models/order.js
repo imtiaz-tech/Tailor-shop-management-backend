@@ -7,7 +7,7 @@ const schema = new Schema(
     orderNumber: {
       type: Number,
       default: () => new Date().getTime(),
-    }, // timestamp
+    },
     price: Number,
     otherPhoneNo: String,
     deliveryDate: Date,

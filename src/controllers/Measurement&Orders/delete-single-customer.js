@@ -1,7 +1,5 @@
 import Customer from "../../models/customer";
-//deleteSingleCategory api used for delete category from database it gets 1 parameters from frontend {id} in req.params
-//this api response is delete category from database
-//this api used in CategoriesList component Dashboard project
+
 const deleteSingleCustomer = async (req, res) => {
   try {
     const { id } = req.params;

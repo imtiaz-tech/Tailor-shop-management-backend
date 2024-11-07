@@ -3,7 +3,6 @@ import express from "express";
 import {
   getOrders,
   getSingleCustomer,
-  getSingleWorker,
   updateSingleCustomer,
   deleteSingleCustomer,
   addOrders,
@@ -11,15 +10,12 @@ import {
   getSingleProduct,
   addMeasurement,
   getMeasurements,
-  getOrdersBySearch,
   getSingleCustomerForEdit,
 } from "../controllers/Measurement&Orders";
 
 const router = express.Router();
 
 router.get("/get-single-customer/:id?", getSingleCustomer);
-router.get("/get-single-worker/:id?", getSingleWorker);
-router.get("/get-orders-by-search/:id?", getOrdersBySearch);
 router.get("/get-single-customer-for-edit/:id?", getSingleCustomerForEdit);
 
 router.patch("/update-single-customer/:id", updateSingleCustomer);

@@ -8,6 +8,8 @@ import getSingleProduct from "./get-single-product";
 import addMeasurement from "./add-measurement";
 import getMeasurements from "./get-measurements";
 import getSingleCustomerForEdit from "./get-single-customer-for-edit";
+import getSingleWorkerForEdit from "./get-single-worker-for-edit";
+import updateSingleWorker from "./update-single-worker";
 export {
   getSingleCustomer,
   getSingleCustomerForEdit,
@@ -19,4 +21,6 @@ export {
   getSingleProduct,
   addMeasurement,
   getMeasurements,
+  getSingleWorkerForEdit,
+  updateSingleWorker,
 };

@@ -1,5 +1,4 @@
 import getSingleCustomer from "./get-single-customer";
-import updateSingleCustomer from "./update-single-customer";
 import deleteSingleCustomer from "./delete-single-customer";
 import addOrders from "./add-order";
 import getOrders from "./get-orders";
@@ -10,10 +9,10 @@ import getMeasurements from "./get-measurements";
 import getSingleCustomerForEdit from "./get-single-customer-for-edit";
 import getSingleWorkerForEdit from "./get-single-worker-for-edit";
 import updateSingleWorker from "./update-single-worker";
+import deleteSingleWorker from "./delete-single-worker";
 export {
   getSingleCustomer,
   getSingleCustomerForEdit,
-  updateSingleCustomer,
   deleteSingleCustomer,
   addOrders,
   getOrders,
@@ -23,4 +22,5 @@ export {
   getMeasurements,
   getSingleWorkerForEdit,
   updateSingleWorker,
+  deleteSingleWorker,
 };

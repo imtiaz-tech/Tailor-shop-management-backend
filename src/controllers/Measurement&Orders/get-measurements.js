@@ -10,7 +10,6 @@ const getMeasurements = async (req, res) => {
       message: "Measurements Get Succesfully",
     });
   } catch (error) {
-    console.log("🚀 ~ getMeasurements ~ error:", error);
     return res.status(500).json({ success: false, message: error.message });
   }
 };

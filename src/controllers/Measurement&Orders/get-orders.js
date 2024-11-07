@@ -3,7 +3,6 @@ import Order from "../../models/order";
 const getOrders = async (req, res) => {
   try {
     let { pageno, perpage, searchOrderCustomer } = req.query;
-    console.log("🚀 ~ getOrders ~ searchOrderCustomer:", searchOrderCustomer);
     pageno = parseInt(pageno) || 1;
     perpage = parseInt(perpage) || 10;
 

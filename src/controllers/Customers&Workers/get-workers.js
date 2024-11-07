@@ -32,7 +32,6 @@ const getWorkers = async (req, res) => {
       message: "Get Users Succesfully",
     });
   } catch (error) {
-    console.log("🚀 ~ getWorkers ~ error:", error);
     return res.status(500).json({ success: false, message: error.message });
   }
 };

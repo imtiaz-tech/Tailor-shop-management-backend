@@ -1,7 +1,7 @@
 import Order from "../../models/order";
 import axios from "axios";
 
-const addOrders = async (req, res) => {
+const addOrder = async (req, res) => {
   try {
     const { otherPhoneNo, price, deliveryDate, workerId, customerId, extraCharges, orderItems } = req.body;
     const data = await Order.create({
@@ -33,4 +33,4 @@ const addOrders = async (req, res) => {
   }
 };
 
-export default addOrders;
+export default addOrder;

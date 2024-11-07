@@ -1,9 +1,9 @@
-// import Product from "../../models/product";
+import Order from "../../models/order";
 
-const deleteSingleProduct = async (req, res) => {
+const deleteSingleOrder = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await Product.findByIdAndDelete({ _id: id });
+    const data = await Order.findByIdAndDelete({ _id: id });
     return res.status(200).json({
       data,
       message: "Deleted Product Succesfully",
@@ -13,4 +13,4 @@ const deleteSingleProduct = async (req, res) => {
   }
 };
 
-export default deleteSingleProduct;
+export default deleteSingleOrder;

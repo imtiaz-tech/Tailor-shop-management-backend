@@ -10,7 +10,7 @@ const getOrders = async (req, res) => {
     if (searchOrderCustomer) {
       filter = {
         $or: [
-          { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
+          // { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
           { otherPhoneNo: { $regex: searchOrderCustomer, $options: "i" } },
           { "customerId.name": { $regex: searchOrderCustomer, $options: "i" } },
         ],

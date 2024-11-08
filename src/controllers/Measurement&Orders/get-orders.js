@@ -2,7 +2,7 @@ import Order from "../../models/order";
 
 const getOrders = async (req, res) => {
   try {
-    let { pageno, perpage, searchOrderCustomer } = req.query;
+    let { pageno, perpage, searchOrderCustomer, status } = req.query;
     pageno = parseInt(pageno) || 1;
     perpage = parseInt(perpage) || 10;
 
@@ -15,6 +15,9 @@ const getOrders = async (req, res) => {
           { "customerId.name": { $regex: searchOrderCustomer, $options: "i" } },
         ],
       };
+    }
+    if (status) {
+      filter.status = status;
     }
     const data = await Order.find(filter)
       .populate("userId")

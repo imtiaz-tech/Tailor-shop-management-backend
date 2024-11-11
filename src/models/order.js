@@ -5,7 +5,7 @@ const schema = new Schema(
     customerId: { type: mongoose.Schema.Types.ObjectId, ref: "customer" },
     workerId: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
     orderNumber: {
-      type: Number,
+      type: String,
       default: () => new Date().getTime(),
     },
     price: Number,

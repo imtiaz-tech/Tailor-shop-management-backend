@@ -2,6 +2,7 @@
 import moment from "moment";
 import Customer from "../../models/customer";
 import Order from "../../models/order";
+import Measurement from "../../models/measurement";
 
 // import Product from "../../models/product";
 // import Users from "../../models/users";
@@ -26,18 +27,26 @@ const getDashboardDetails = async (req, res) => {
         $lt: endTime,
       };
     }
+    const deliveryStart = moment().startOf("day").toDate();
+    const deliveryEnd = moment().add(7, "days").endOf("day").toDate();
+    const upcomingOrderCount = await Order.countDocuments({
+      deliveryDate: {
+        $gte: deliveryStart,
+        $lte: deliveryEnd,
+      },
+    });
     const orderCount = await Order.countDocuments({
       createdAt: {
         $gte: moment(startTime),
         $lte: moment(endTime),
       },
     });
-    // const productCount = await Product.countDocuments({
-    //   createdAt: {
-    //     $gte: moment(startTime),
-    //     $lte: moment(endTime),
-    //   },
-    // });
+    const measurementCount = await Measurement.countDocuments({
+      createdAt: {
+        $gte: moment(startTime),
+        $lte: moment(endTime),
+      },
+    });
     const customerCount = await Customer.countDocuments({
       createdAt: {
         $gte: moment(startTime),
@@ -81,7 +90,8 @@ const getDashboardDetails = async (req, res) => {
     return res.status(200).json({
       averageItemSale,
       customerCount,
-      // productCount,
+      measurementCount,
+      upcomingOrderCount,
       average,
       orderCount,
       orderSalesCount,

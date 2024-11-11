@@ -2,7 +2,8 @@ import Order from "../../models/order";
 
 const getOrders = async (req, res) => {
   try {
-    let { pageno, perpage, searchOrderCustomer, status } = req.query;
+    let { pageno, perpage, searchOrderCustomer, deliveryDate } = req.query;
+    console.log("🚀 ~ getOrders ~ searchOrderCustomer:", searchOrderCustomer);
     pageno = parseInt(pageno) || 1;
     perpage = parseInt(perpage) || 10;
 
@@ -10,14 +11,14 @@ const getOrders = async (req, res) => {
     if (searchOrderCustomer) {
       filter = {
         $or: [
-          // { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
+          { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
           { otherPhoneNo: { $regex: searchOrderCustomer, $options: "i" } },
           { "customerId.name": { $regex: searchOrderCustomer, $options: "i" } },
         ],
       };
     }
-    if (status) {
-      filter.status = status;
+    if (deliveryDate) {
+      filter.deliveryDate = deliveryDate;
     }
     const data = await Order.find(filter)
       .populate("userId")

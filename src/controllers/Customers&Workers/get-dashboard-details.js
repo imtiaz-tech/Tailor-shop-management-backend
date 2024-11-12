@@ -27,6 +27,10 @@ const getDashboardDetails = async (req, res) => {
         $lt: endTime,
       };
     }
+    const user = req.user;
+    const assignedOrdersCount = await Order.count({ workerId: user._id });
+    const completedOrdersCount = await Order.count({ workerId: user._id, status: "Completed" });
+
     const deliveryStart = moment().startOf("day").toDate();
     const deliveryEnd = moment().add(7, "days").endOf("day").toDate();
     const upcomingOrderCount = await Order.countDocuments({
@@ -55,12 +59,6 @@ const getDashboardDetails = async (req, res) => {
     });
     const orderSalesCount = await Order.aggregate([
       { $match: { createdAt: { $gte: new Date(startTime), $lt: new Date(endTime) } } },
-      // { $unwind: "$cart" },
-      // {
-      //   $project: {
-      //     totalSaleAmount: { $multiply: ["$cart.unitPrice", "$cart.quantity"] },
-      //   },
-      // },
       {
         $group: {
           _id: null,
@@ -95,6 +93,8 @@ const getDashboardDetails = async (req, res) => {
       average,
       orderCount,
       orderSalesCount,
+      assignedOrdersCount,
+      completedOrdersCount,
       success: true,
       message: "Get Dashboard details Succesfully",
     });

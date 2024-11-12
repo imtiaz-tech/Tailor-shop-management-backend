@@ -13,18 +13,8 @@ const addOrder = async (req, res) => {
       workerId,
       orderItems,
     });
-    // const options = {
-    //   method: POST,
-    //   url: "https://graph.facebook.com/v21.0/03287547164/messages",
-    //   headers: {
-    //     "X-API-KEY": "E6xwOg2BY4RbmiJogfyegrt746r7te",
-    //     "Content-Type": "application/json",
-    //   },
-    // };
-    // const result = await axios(options);
     return res.status(200).json({
       data,
-      result,
       success: true,
       message: "Order Created Succesfully",
     });

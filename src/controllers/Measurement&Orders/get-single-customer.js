@@ -5,7 +5,7 @@ const getSingleCustomer = async (req, res) => {
     const { search } = req.query;
 
     const data = await Customer.findOne({
-      $or: [{ phoneNo: { $regex: search, $options: "i" } }, { name: { $regex: search, $options: "i" } }],
+      phoneNo: search,
     });
     return res.status(200).json({
       data,

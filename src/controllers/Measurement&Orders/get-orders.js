@@ -2,8 +2,8 @@ import Order from "../../models/order";
 
 const getOrders = async (req, res) => {
   try {
-    let { pageno, perpage, searchOrderCustomer, deliveryDate, workerId, status } = req.query;
-    pageno = parseInt(pageno) || 1;
+    let { currentPage, perpage, searchOrderCustomer, deliveryDate, workerId, status } = req.query;
+    let pageno = parseInt(currentPage) || 1;
     perpage = parseInt(perpage) || 10;
 
     let filter = {};

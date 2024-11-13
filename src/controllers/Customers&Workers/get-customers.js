@@ -2,8 +2,8 @@ import Customer from "../../models/customer";
 
 const getCustomers = async (req, res) => {
   try {
-    let { pageno, perpage, searchCustomer } = req.query;
-    pageno = parseInt(pageno) || 1;
+    let { currentPage, perpage, searchCustomer } = req.query;
+    let pageno = parseInt(currentPage) || 1;
     perpage = parseInt(perpage) || 10;
     let filter = {};
     if (searchCustomer) {

@@ -2,8 +2,8 @@ import Users from "../../models/users";
 
 const getWorkers = async (req, res) => {
   try {
-    let { pageno, perpage, all, searchWorker } = req.query;
-    pageno = parseInt(pageno) || 1;
+    let { currentPage, perpage, all, searchWorker } = req.query;
+    let pageno = parseInt(currentPage) || 1;
     perpage = parseInt(perpage) || 10;
 
     let filter = { userType: "WORKER" };

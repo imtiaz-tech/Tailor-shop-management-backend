@@ -10,8 +10,11 @@ const app = express();
 setupDatabase();
 applyMiddlewares(app);
 
-app.use("/api/v1", router);
+app.use("/", (req, res) => {
+  res.send("OK");
+});
 
+app.use("/api/v1", router);
 
 app.listen(process.env.PORT, () => {
   console.log(`app is listening to port ${process.env.PORT}`);

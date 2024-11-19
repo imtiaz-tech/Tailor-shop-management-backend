@@ -7,13 +7,13 @@ import bodyParser from "body-parser";
 import { LocalLoginStrategy, AuthenticationStrategy } from "./auth";
 
 const applyMiddlewares = (app) => {
-  // app.use(cors({ origin: "*" }));
+  app.use(cors({ origin: "*" }));
   // app.use(cors())
-  const corsConfig = {
-    origin: "",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  };
+  // const corsConfig = {
+  //   origin: "",
+  //   credentials: true,
+  //   methods: ["GET", "POST", "PUT", "DELETE"],
+  // };
   app.use(cors(corsConfig));
   app.options("", cors(corsConfig));
   app.use(bodyParser.json({ limit: "50mb" }));

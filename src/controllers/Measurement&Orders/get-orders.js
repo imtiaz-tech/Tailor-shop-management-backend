@@ -9,6 +9,7 @@ const getOrders = async (req, res) => {
     let filter = {};
     if (searchOrderCustomer) {
       filter = {
+        ...filter,
         $or: [
           { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
           { otherPhoneNo: { $regex: searchOrderCustomer, $options: "i" } },
@@ -28,7 +29,7 @@ const getOrders = async (req, res) => {
     const data = await Order.find(filter)
       .populate("userId")
       .populate("customerId")
-      .populate("measurementId")
+      .populate("orderItems.measurementId")
       .skip((pageno - 1) * perpage)
       .limit(perpage);
     const count = await Order.count(filter);

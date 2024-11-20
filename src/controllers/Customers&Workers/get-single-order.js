@@ -1,4 +1,3 @@
-import Measurement from "../../models/measurement";
 import Order from "../../models/order";
 
 const getSingleOrder = async (req, res) => {

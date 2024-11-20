@@ -1,22 +1,8 @@
-// import Order from "../../models/order";
 import moment from "moment";
 import Customer from "../../models/customer";
 import Order from "../../models/order";
 import Measurement from "../../models/measurement";
 
-// import Product from "../../models/product";
-// import Users from "../../models/users";
-//getDashboardDetails api used for get getDashboardDetails from database it gets 2 parameters from frontend {startTime,endTime} in req.query
-//orderCount used for count order by start time and end time,
-//productCount used for count product. add product by start time and end time,
-//customerCount used for count customer. add customer by start time and end time,
-//orderSalesCount used for count total sale by start time and end time,
-//orderProductCount used for count product in cart,
-//average used for count averge by start time and end time,
-//averageItemSale used for count averageItemSale by start time and end time,
-//this api response return orderCount,productCount,customerCount,orderSalesCount,average,averageItemSale
-//Moment is a JavaScript library that helps manipulate date objects in JavaScript
-//this api used in Dashboard component for show all above data
 const getDashboardDetails = async (req, res) => {
   try {
     const { startTime, endTime } = req.body;

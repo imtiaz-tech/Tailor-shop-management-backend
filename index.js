@@ -10,9 +10,9 @@ const app = express();
 setupDatabase();
 applyMiddlewares(app);
 
-app.use("/", (req, res) => {
-  res.send("OK");
-});
+// app.use("/", (req, res) => {
+//   res.send("OK");
+// });
 
 app.use("/api/v1", router);
 

@@ -3,7 +3,8 @@ import Order from "../../models/order";
 const changeWorker = async (req, res) => {
   try {
     const { id } = req.params;
-    const data = await Order.updateOne({ workerId: id });
+    const { workerId } = req.body;
+    const data = await Order.updateOne({ _id: id }, { workerId });
     return res.status(200).json({
       data,
       message: "change worker Succesfully",

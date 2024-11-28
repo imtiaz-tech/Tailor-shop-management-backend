@@ -1,4 +1,6 @@
+import Customer from "../../models/customer";
 import Order from "../../models/order";
+import utils from "util";
 
 const getOrders = async (req, res) => {
   try {
@@ -7,13 +9,19 @@ const getOrders = async (req, res) => {
     perpage = parseInt(perpage) || 10;
 
     let filter = {};
+
     if (searchOrderCustomer) {
+      const customers = await Customer.find({
+        name: { $regex: searchOrderCustomer, $options: "i" },
+      }).select("_id");
+      const customerIds = customers.map((cust) => cust._id);
+
       filter = {
         ...filter,
         $or: [
           { orderNumber: { $regex: searchOrderCustomer, $options: "i" } },
           { otherPhoneNo: { $regex: searchOrderCustomer, $options: "i" } },
-          { "customerId.name": { $regex: searchOrderCustomer, $options: "i" } },
+          { customerId: { $in: customerIds } },
         ],
       };
     }
